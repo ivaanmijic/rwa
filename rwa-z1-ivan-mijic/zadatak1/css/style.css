@@ -1,63 +1,81 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #f5f4fa;
   color: #303030;
+  font-family: sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  font-family: sans-serif;
+  padding: 20px;
 }
 
-#wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 90vw;
-  max-width: 1200px;
-  min-width: 400px;
+.main {
   background-color: #ffffff;
   border-radius: 20px;
-  margin: 20px auto 10px auto;
-  padding: 0 50px;
-  box-sizing: border-box;
-}
-
-h4 {
-  font-size: 40px;
-  letter-spacing: -2%;
-  margin: 0;
-}
-
-h5 {
-  font-size: 30px;
-  letter-spacing: -2%;
-}
-
-h6 {
-  font-size: 22px;
-  letter-spacing: -2%;
-  margin: 0 0 0.5rem 0;
-  text-align: left;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 header {
   display: flex;
   align-items: center;
-  width: 100%;
+  justify-content: space-between;
   padding: 20px 0;
 }
 
-header h4 {
-  margin: 0;
-  display: inline;
+header h1 {
+  font-size: 1.8rem;
+}
+
+.right-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ranking-btn {
+  position: relative;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #603ae9;
+  transition: color 0.2s;
+}
+
+.ranking-btn:hover {
+  color: #6e4ce6;
+}
+
+.ranking-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #6e4ce6;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.ranking-btn:hover::after {
+  transform: scaleX(1);
 }
 
 .header-icon {
   display: flex;
   gap: 10px;
-  margin-left: auto;
 }
-
 .header-icon img {
   width: 32px;
   height: 32px;
@@ -65,33 +83,36 @@ header h4 {
   padding: 5px;
   transition: background-color 0.2s;
 }
-
 .header-icon img:hover {
   background-color: rgb(245, 245, 245);
 }
 
 .iframe-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 1rem;
-  width: 100%;
-  max-width: 1200px;
-  margin: 30px auto 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 30px auto;
   padding: 0 1rem;
-  box-sizing: border-box;
 }
 
 .iframe-card {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+}
+
+.iframe-card h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
 }
 
 .iframe-card iframe {
   width: 100%;
   height: 300px;
   border: 1px solid #f0f0f5;
-  flex-shrink: 0;
+  border-radius: 10px;
 }
 
 .button-wrapper {
@@ -115,40 +136,45 @@ header h4 {
   background-color: #6e4ce6;
 }
 
-@media (max-width: 600px) {
-  .iframe-container {
-    grid-template-columns: 1fr;
-    padding: 0 0.5rem;
-  }
-}
-
 .rank-container {
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 40px auto 0;
+  padding: 0 1rem;
 }
 
 .rank-container h5 {
   margin-bottom: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+  border-color: #6e4ce6;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
 }
 
 .table-container .row {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #603ae9;
   padding: 8px 0;
 }
 
 .table-container .row.header {
   font-weight: bold;
-  background-color: #f5f5f5;
+  background-color: #f5f4fa;
 }
 
 .cell.image {
   width: 150px;
+  margin-right: 20px;
+  flex-shrink: 0;
 }
 
 .cell.image img {
+  border-radius: 20px;
   width: 100%;
   height: auto;
   display: block;
@@ -156,10 +182,67 @@ header h4 {
 
 .cell.headline {
   flex: 2;
+  font-size: 1rem;
 }
 
 .cell.votes,
 .cell.rank {
   flex: 1;
   text-align: center;
+  font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .iframe-card iframe {
+    height: 250px;
+  }
+
+  .cell.image {
+    width: 120px;
+    margin-right: 10px;
+  }
+
+  .table-container .row {
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-icon {
+    margin: 10px 0 0;
+  }
+
+  .iframe-card h3 {
+    font-size: 1rem;
+  }
+
+  .iframe-card iframe {
+    height: 200px;
+  }
+
+  .button-wrapper button {
+    font-size: 0.9rem;
+    width: 90px;
+  }
+}
+
+footer {
+  margin-top: 30px;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  padding: 10px 9;
 }

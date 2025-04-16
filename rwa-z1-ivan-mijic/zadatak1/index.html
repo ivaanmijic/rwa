@@ -1,96 +1,127 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Video voting competition</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title></title>
-    <link href="css/style.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Inter"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Inter";
-        font-size: 22px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Wrapper -->
-    <div id="wrapper">
-      <!-- Header -->
-      <header>
-        <h4>Video voting competition</h4>
+
+<head>
+  <title>Video voting competition</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title></title>
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Inter";
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Wrapper -->
+  <div class="main">
+    <!-- Header -->
+    <header>
+      <h1>Video voting competition</h1>
+      <div class="right-controls">
+        <button class="ranking-btn" onclick="window.location.href='ranking.html'">Ranking</button>
         <span class="header-icon">
-          <img src="assets/images/refresh.svg" alt="" />
-          <img src="assets/images/share.svg" alt="" />
+          <img src="assets/images/refresh.svg" alt="Refresh" />
+          <img src="assets/images/share.svg" alt="Share" />
         </span>
-      </header>
+      </div>
+    </header>
 
-      <!-- Videos -->
-      <div class="iframe-container">
-        <div class="iframe-card">
-          <h6>Causes and Effects of Climate Change | National Geographic</h6>
-          <iframe
-            src="https://www.youtube.com/embed/G4H1N_yXBiA?si=ualPksehEuEfqvK-"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-          <div class="button-wrapper">
-            <button type="button">Vote</button>
-          </div>
-        </div>
-
-        <div class="iframe-card">
-          <h6>Who Invented the Internet? And Why?<h6>
-          <iframe
-            src="https://www.youtube.com/embed/21eFwbb48sE?si=kag27-ijEf7Ub6mO"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-          <div class="button-wrapper">
-            <button type="button">Vote</button>
-          </div>
+    <!-- Videos -->
+    <div class="iframe-container">
+      <div class="iframe-card">
+        <h3>Causes and Effects of Climate Change | National Geographic</h3>
+        <iframe src="https://www.youtube.com/embed/G4H1N_yXBiA?si=ualPksehEuEfqvK-" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="button-wrapper">
+          <button type="button">Vote</button>
         </div>
       </div>
 
-      <div class="rank-container">
-        <h5>Top 5 videos</h5>
-        <div class="table-container">
-          <!-- Header -->
-          <div class="row header">
-            <div class="cell image"></div>
-            <div class="cell headline">Headline</div>
-            <div class="cell votes">Votes (positive/total)</div>
-            <div class="cell rank">Rank</div>
-          </div>
+      <div class="iframe-card">
+        <h3>Who Invented the Internet? And Why?</h3>
+            <iframe src="https://www.youtube.com/embed/21eFwbb48sE?si=kag27-ijEf7Ub6mO" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="button-wrapper">
+              <button type="button">Vote</button>
+            </div>
+      </div>
+    </div>
 
-          <div class="row">
-            <div class="cell image">
-              <img src="http://img.youtube.com/vi/G4H1N_yXBiA/hqdefault.jpg" />
-            </div>
-            <div class="cell headline">Headline</div>
-            <div class="cell votes">Votes (positive/total)</div>
-            <div class="cell rank">Rank</div>
+    <div class="rank-container">
+      <h2>Top 5 videos</h2>
+      <div class="table-container">
+        <!-- Header -->
+        <div class="row header">
+          <div class="cell image"></div>
+          <div class="cell headline">Headline</div>
+          <div class="cell votes">Votes</div>
+          <div class="cell rank">Rank</div>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="row">
+          <div class="cell image">
+            <img src="https://img.youtube.com/vi/e-P5IFTqB98/hqdefault.jpg" />
           </div>
-           <div class="row">
-            <div class="cell image">
-              <img src="http://img.youtube.com/vi/21eFwbb48sE/hqdefault.jpg" />
-            </div>
-            <div class="cell headline">Headline</div>
-            <div class="cell votes">Votes (positive/total)</div>
-            <div class="cell rank">Rank</div>
- 
+          <div class="cell headline">Black Holes Explained – From Birth to Death
+          </div>
+          <div class="cell votes">24/25</div>
+          <div class="cell rank">1st</div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row">
+          <div class="cell image">
+            <img src="http://img.youtube.com/vi/G4H1N_yXBiA/hqdefault.jpg" />
+          </div>
+          <div class="cell headline">Causes and Effects of Climate Change | National Geographic</div>
+          <div class="cell votes">23/25</div>
+          <div class="cell rank">2nd</div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="row">
+          <div class="cell image">
+            <img src="https://img.youtube.com/vi/2pp17E4E-O8/hqdefault.jpg" />
+          </div>
+          <div class="cell headline">Genome Editing with CRISPR-Cas9</div>
+          <div class="cell votes">27/30</div>
+          <div class="cell rank">3rd</div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="row">
+          <div class="cell image">
+            <img src="https://img.youtube.com/vi/vo4pMVb0R6M/hqdefault.jpg" />
+          </div>
+          <div class="cell headline">Intro to Psychology: Crash Course Psychology #1
+          </div>
+          <div class="cell votes">17/20</div>
+          <div class="cell rank">4th</div>
+        </div>
+
+        <!-- Row 5 -->
+        <div class="row">
+          <div class="cell image">
+            <img src="http://img.youtube.com/vi/21eFwbb48sE/hqdefault.jpg" />
+          </div>
+          <div class="cell headline">Who Invented the Internet? And Why?</div>
+          <div class="cell votes">32/40</div>
+          <div class="cell rank">5th</div>
+
         </div>
       </div>
     </div>
-  </body>
+
+</body>
+
 </html>
