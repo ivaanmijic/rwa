@@ -1,6 +1,6 @@
 /**
  * ASYNCHRONOUS PROGRAMMING BASICS
- * 
+ *
  * This file explains the fundamentals of asynchronous programming,
  * how it works in JavaScript, and common issues with solutions.
  */
@@ -9,7 +9,7 @@
 /**
  * Asynchronous programming is a programming paradigm that allows operations to run
  * in the background while the rest of the code continues to execute.
- * 
+ *
  * In synchronous programming, operations block execution until they complete.
  * In asynchronous programming, operations are scheduled to run later, allowing
  * the program to continue executing other code in the meantime.
@@ -23,7 +23,7 @@ console.log("3. This runs third");
 // ========== JAVASCRIPT'S ASYNCHRONOUS NATURE ==========
 /**
  * JavaScript is single-threaded but uses an event loop to handle asynchronous operations.
- * 
+ *
  * Key components:
  * 1. Call Stack: Where synchronous code executes
  * 2. Web APIs: Where asynchronous operations (setTimeout, fetch, etc.) are processed
@@ -69,7 +69,7 @@ for (let j = 0; j < 5; j++) {
 // Solution 2: Use an IIFE (Immediately Invoked Function Expression)
 console.log("Solution 2 - Using IIFE:");
 for (var k = 0; k < 5; k++) {
-  (function(index) {
+  (function (index) {
     setTimeout(() => {
       console.log("Solution 2 - Index value:", index); // Prints 0, 1, 2, 3, 4
     }, 2000);

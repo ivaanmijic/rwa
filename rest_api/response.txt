@@ -1,0 +1,349 @@
+> Task :prepareInplaceWebAppFolder UP-TO-DATE
+> Task :createInplaceWebAppFolder UP-TO-DATE
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :prepareInplaceWebAppClasses UP-TO-DATE
+> Task :prepareInplaceWebApp UP-TO-DATE
+13:32:11.154 [main] DEBUG org.jboss.logging -- Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+13:32:11.259 [main] DEBUG org.hibernate.jpa.HibernatePersistenceProvider -- Located and parsed 1 persistence units; checking each
+13:32:11.259 [main] DEBUG org.hibernate.jpa.HibernatePersistenceProvider -- Checking persistence-unit [name=blogPU, explicit-provider=org.hibernate.jpa.HibernatePersistenceProvider] against incoming persistence unit name [blogPU]
+13:32:11.260 [main] DEBUG org.hibernate.jpa.boot.spi.ProviderChecker -- Persistence-unit [blogPU] requested PersistenceProvider [org.hibernate.jpa.HibernatePersistenceProvider]
+13:32:11.267 [main] DEBUG org.hibernate.jpa.internal.util.LogHelper -- PersistenceUnitInfo [
+	name: blogPU
+	persistence provider classname: org.hibernate.jpa.HibernatePersistenceProvider
+	classloader: null
+	excludeUnlistedClasses: false
+	JTA datasource: null
+	Non JTA datasource: null
+	Transaction type: RESOURCE_LOCAL
+	PU root URL: file:/home/ivan/fakultet/rwa/rest_api/build/resources/main/
+	Shared Cache Mode: null
+	Validation Mode: null
+	Jar files URLs []
+	Managed classes names [
+		com.example.blog.model.BlogEntry
+		com.example.blog.model.User]
+	Mapping files names []
+	Properties [
+		jakarta.persistence.jdbc.password: YOUR_PASSWORD
+		hibernate.dialect: org.hibernate.dialect.MySQLDialect
+		hibernate.show_sql: true
+		jakarta.persistence.jdbc.url: jdbc:mysql://localhost:3306/blogdb?createDatabaseIfNotExist=true
+		jakarta.persistence.jdbc.driver: com.mysql.cj.jdbc.Driver
+		hibernate.hbm2ddl.auto: update
+		hibernate.format_sql: true
+		jakarta.persistence.jdbc.user: YOUR_USERNAME]
+13:32:11.272 [main] DEBUG org.hibernate.integrator.internal.IntegratorServiceImpl -- Adding Integrator [org.hibernate.boot.beanvalidation.BeanValidationIntegrator].
+13:32:11.276 [main] DEBUG org.hibernate.integrator.internal.IntegratorServiceImpl -- Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+13:32:11.334 [main] INFO org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.4.0.Final
+13:32:11.336 [main] DEBUG org.hibernate.cfg.Environment -- HHH000206: 'hibernate.properties' not found
+13:32:11.361 [main] DEBUG org.hibernate.orm.idgen.factory -- Ignoring CDI for resolving IdentifierGenerator instances as extended or delayed CDI support was enabled
+13:32:11.367 [main] DEBUG org.hibernate.orm.idgen.factory -- Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+13:32:11.368 [main] DEBUG org.hibernate.orm.idgen.factory -- Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+13:32:11.369 [main] DEBUG org.hibernate.orm.idgen.factory -- Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+13:32:11.369 [main] DEBUG org.hibernate.orm.idgen.factory -- Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+13:32:11.369 [main] DEBUG org.hibernate.orm.idgen.factory -- Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+13:32:11.370 [main] DEBUG org.hibernate.orm.idgen.factory -- Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+13:32:11.371 [main] DEBUG org.hibernate.orm.idgen.factory -- Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+13:32:11.372 [main] DEBUG org.hibernate.orm.idgen.factory -- Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+13:32:11.373 [main] DEBUG org.hibernate.orm.idgen.factory -- Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+13:32:11.374 [main] DEBUG org.hibernate.orm.idgen.factory -- Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+13:32:11.374 [main] DEBUG org.hibernate.orm.idgen.factory -- Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+13:32:11.376 [main] DEBUG org.hibernate.orm.idgen.factory -- Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+13:32:11.386 [main] DEBUG org.hibernate.cache.internal.RegionFactoryInitiator -- Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+13:32:11.387 [main] INFO org.hibernate.cache.internal.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+13:32:11.484 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration boolean -> org.hibernate.type.BasicTypeReference@14d0c3ff
+13:32:11.485 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration boolean -> org.hibernate.type.BasicTypeReference@14d0c3ff
+13:32:11.485 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.lang.Boolean -> org.hibernate.type.BasicTypeReference@14d0c3ff
+13:32:11.485 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration numeric_boolean -> org.hibernate.type.BasicTypeReference@1441dc49
+13:32:11.485 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration org.hibernate.type.NumericBooleanConverter -> org.hibernate.type.BasicTypeReference@1441dc49
+13:32:11.485 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration true_false -> org.hibernate.type.BasicTypeReference@13e4b8da
+13:32:11.485 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration org.hibernate.type.TrueFalseConverter -> org.hibernate.type.BasicTypeReference@13e4b8da
+13:32:11.485 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration yes_no -> org.hibernate.type.BasicTypeReference@204a0e3c
+13:32:11.485 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration org.hibernate.type.YesNoConverter -> org.hibernate.type.BasicTypeReference@204a0e3c
+13:32:11.485 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration byte -> org.hibernate.type.BasicTypeReference@3217fef1
+13:32:11.486 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration byte -> org.hibernate.type.BasicTypeReference@3217fef1
+13:32:11.486 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.lang.Byte -> org.hibernate.type.BasicTypeReference@3217fef1
+13:32:11.486 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration binary -> org.hibernate.type.BasicTypeReference@28aedf6e
+13:32:11.486 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration byte[] -> org.hibernate.type.BasicTypeReference@28aedf6e
+13:32:11.486 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration [B -> org.hibernate.type.BasicTypeReference@28aedf6e
+13:32:11.486 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration binary_wrapper -> org.hibernate.type.BasicTypeReference@1eba80c9
+13:32:11.486 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration wrapper-binary -> org.hibernate.type.BasicTypeReference@1eba80c9
+13:32:11.486 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration image -> org.hibernate.type.BasicTypeReference@6ef146cc
+13:32:11.486 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration blob -> org.hibernate.type.BasicTypeReference@631ccd95
+13:32:11.486 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.sql.Blob -> org.hibernate.type.BasicTypeReference@631ccd95
+13:32:11.487 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration materialized_blob -> org.hibernate.type.BasicTypeReference@3d972b37
+13:32:11.487 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration materialized_blob_wrapper -> org.hibernate.type.BasicTypeReference@77615884
+13:32:11.487 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration short -> org.hibernate.type.BasicTypeReference@13c2b782
+13:32:11.487 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration short -> org.hibernate.type.BasicTypeReference@13c2b782
+13:32:11.487 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.lang.Short -> org.hibernate.type.BasicTypeReference@13c2b782
+13:32:11.487 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration integer -> org.hibernate.type.BasicTypeReference@16b7a00a
+13:32:11.487 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration int -> org.hibernate.type.BasicTypeReference@16b7a00a
+13:32:11.487 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.lang.Integer -> org.hibernate.type.BasicTypeReference@16b7a00a
+13:32:11.487 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration long -> org.hibernate.type.BasicTypeReference@12fdff78
+13:32:11.488 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration long -> org.hibernate.type.BasicTypeReference@12fdff78
+13:32:11.488 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.lang.Long -> org.hibernate.type.BasicTypeReference@12fdff78
+13:32:11.488 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration float -> org.hibernate.type.BasicTypeReference@6f2530db
+13:32:11.488 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration float -> org.hibernate.type.BasicTypeReference@6f2530db
+13:32:11.488 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.lang.Float -> org.hibernate.type.BasicTypeReference@6f2530db
+13:32:11.488 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration double -> org.hibernate.type.BasicTypeReference@695df41a
+13:32:11.488 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration double -> org.hibernate.type.BasicTypeReference@695df41a
+13:32:11.488 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.lang.Double -> org.hibernate.type.BasicTypeReference@695df41a
+13:32:11.488 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration big_integer -> org.hibernate.type.BasicTypeReference@4241aecb
+13:32:11.489 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.math.BigInteger -> org.hibernate.type.BasicTypeReference@4241aecb
+13:32:11.489 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration big_decimal -> org.hibernate.type.BasicTypeReference@3f3a9fc4
+13:32:11.489 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.math.BigDecimal -> org.hibernate.type.BasicTypeReference@3f3a9fc4
+13:32:11.489 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration character -> org.hibernate.type.BasicTypeReference@795fd310
+13:32:11.489 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration char -> org.hibernate.type.BasicTypeReference@795fd310
+13:32:11.489 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.lang.Character -> org.hibernate.type.BasicTypeReference@795fd310
+13:32:11.489 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration character_nchar -> org.hibernate.type.BasicTypeReference@7fa41505
+13:32:11.489 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration string -> org.hibernate.type.BasicTypeReference@30dccbcc
+13:32:11.489 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.lang.String -> org.hibernate.type.BasicTypeReference@30dccbcc
+13:32:11.489 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration nstring -> org.hibernate.type.BasicTypeReference@5bf3a6ac
+13:32:11.490 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration characters -> org.hibernate.type.BasicTypeReference@5c333991
+13:32:11.490 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration char[] -> org.hibernate.type.BasicTypeReference@5c333991
+13:32:11.490 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration [C -> org.hibernate.type.BasicTypeReference@5c333991
+13:32:11.490 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration wrapper-characters -> org.hibernate.type.BasicTypeReference@3e0032f
+13:32:11.490 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration text -> org.hibernate.type.BasicTypeReference@55343a34
+13:32:11.490 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration ntext -> org.hibernate.type.BasicTypeReference@133420f8
+13:32:11.490 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration clob -> org.hibernate.type.BasicTypeReference@560e6cbe
+13:32:11.490 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.sql.Clob -> org.hibernate.type.BasicTypeReference@560e6cbe
+13:32:11.490 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration nclob -> org.hibernate.type.BasicTypeReference@5574f42b
+13:32:11.490 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.sql.NClob -> org.hibernate.type.BasicTypeReference@5574f42b
+13:32:11.490 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration materialized_clob -> org.hibernate.type.BasicTypeReference@21e5812b
+13:32:11.491 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration materialized_clob_char_array -> org.hibernate.type.BasicTypeReference@1364560f
+13:32:11.491 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration materialized_clob_character_array -> org.hibernate.type.BasicTypeReference@36aab341
+13:32:11.491 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration materialized_nclob -> org.hibernate.type.BasicTypeReference@448dcc13
+13:32:11.491 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration materialized_nclob_character_array -> org.hibernate.type.BasicTypeReference@496ce170
+13:32:11.491 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration materialized_nclob_char_array -> org.hibernate.type.BasicTypeReference@7809027c
+13:32:11.491 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration Duration -> org.hibernate.type.BasicTypeReference@1b5a8687
+13:32:11.491 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.time.Duration -> org.hibernate.type.BasicTypeReference@1b5a8687
+13:32:11.491 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration LocalDateTime -> org.hibernate.type.BasicTypeReference@311d3cab
+13:32:11.491 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.time.LocalDateTime -> org.hibernate.type.BasicTypeReference@311d3cab
+13:32:11.491 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration LocalDate -> org.hibernate.type.BasicTypeReference@1fd42c99
+13:32:11.492 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.time.LocalDate -> org.hibernate.type.BasicTypeReference@1fd42c99
+13:32:11.492 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration LocalTime -> org.hibernate.type.BasicTypeReference@2ffed7fd
+13:32:11.492 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.time.LocalTime -> org.hibernate.type.BasicTypeReference@2ffed7fd
+13:32:11.492 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration OffsetDateTime -> org.hibernate.type.BasicTypeReference@605f023b
+13:32:11.492 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.time.OffsetDateTime -> org.hibernate.type.BasicTypeReference@605f023b
+13:32:11.492 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration OffsetDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@38ff82ff
+13:32:11.492 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration OffsetDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@6f1c19d
+13:32:11.492 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration OffsetTime -> org.hibernate.type.BasicTypeReference@5f69bf81
+13:32:11.492 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.time.OffsetTime -> org.hibernate.type.BasicTypeReference@5f69bf81
+13:32:11.492 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration OffsetTimeUtc -> org.hibernate.type.BasicTypeReference@473f308d
+13:32:11.493 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration OffsetTimeWithTimezone -> org.hibernate.type.BasicTypeReference@393baef
+13:32:11.493 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration OffsetTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@be67e29
+13:32:11.493 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration ZonedDateTime -> org.hibernate.type.BasicTypeReference@19e15d63
+13:32:11.493 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.time.ZonedDateTime -> org.hibernate.type.BasicTypeReference@19e15d63
+13:32:11.493 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration ZonedDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@2764ad8a
+13:32:11.493 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration ZonedDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@393e3f4b
+13:32:11.493 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration date -> org.hibernate.type.BasicTypeReference@1110973
+13:32:11.493 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.sql.Date -> org.hibernate.type.BasicTypeReference@1110973
+13:32:11.493 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration time -> org.hibernate.type.BasicTypeReference@12885677
+13:32:11.493 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.sql.Time -> org.hibernate.type.BasicTypeReference@12885677
+13:32:11.494 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration timestamp -> org.hibernate.type.BasicTypeReference@1002a151
+13:32:11.494 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.sql.Timestamp -> org.hibernate.type.BasicTypeReference@1002a151
+13:32:11.494 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.util.Date -> org.hibernate.type.BasicTypeReference@1002a151
+13:32:11.494 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration calendar -> org.hibernate.type.BasicTypeReference@588e107d
+13:32:11.494 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.util.Calendar -> org.hibernate.type.BasicTypeReference@588e107d
+13:32:11.494 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.util.GregorianCalendar -> org.hibernate.type.BasicTypeReference@588e107d
+13:32:11.494 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration calendar_date -> org.hibernate.type.BasicTypeReference@51ddc08e
+13:32:11.494 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration calendar_time -> org.hibernate.type.BasicTypeReference@1b60f2c
+13:32:11.495 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration instant -> org.hibernate.type.BasicTypeReference@43b3e62
+13:32:11.495 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.time.Instant -> org.hibernate.type.BasicTypeReference@43b3e62
+13:32:11.495 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration uuid -> org.hibernate.type.BasicTypeReference@2c9ecb60
+13:32:11.495 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.util.UUID -> org.hibernate.type.BasicTypeReference@2c9ecb60
+13:32:11.495 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration pg-uuid -> org.hibernate.type.BasicTypeReference@2c9ecb60
+13:32:11.495 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration uuid-binary -> org.hibernate.type.BasicTypeReference@1378b7cd
+13:32:11.496 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration uuid-char -> org.hibernate.type.BasicTypeReference@228605e1
+13:32:11.497 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration class -> org.hibernate.type.BasicTypeReference@250cf6a4
+13:32:11.497 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.lang.Class -> org.hibernate.type.BasicTypeReference@250cf6a4
+13:32:11.497 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration currency -> org.hibernate.type.BasicTypeReference@739ceb17
+13:32:11.497 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration Currency -> org.hibernate.type.BasicTypeReference@739ceb17
+13:32:11.497 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.util.Currency -> org.hibernate.type.BasicTypeReference@739ceb17
+13:32:11.498 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration locale -> org.hibernate.type.BasicTypeReference@61a74188
+13:32:11.498 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.util.Locale -> org.hibernate.type.BasicTypeReference@61a74188
+13:32:11.498 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration serializable -> org.hibernate.type.BasicTypeReference@16b6e5e
+13:32:11.498 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.io.Serializable -> org.hibernate.type.BasicTypeReference@16b6e5e
+13:32:11.498 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration timezone -> org.hibernate.type.BasicTypeReference@43900101
+13:32:11.498 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.util.TimeZone -> org.hibernate.type.BasicTypeReference@43900101
+13:32:11.498 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration ZoneOffset -> org.hibernate.type.BasicTypeReference@57c09e37
+13:32:11.498 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.time.ZoneOffset -> org.hibernate.type.BasicTypeReference@57c09e37
+13:32:11.498 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration url -> org.hibernate.type.BasicTypeReference@cb02e46
+13:32:11.499 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.net.URL -> org.hibernate.type.BasicTypeReference@cb02e46
+13:32:11.499 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration vector -> org.hibernate.type.BasicTypeReference@56f3a810
+13:32:11.499 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration row_version -> org.hibernate.type.BasicTypeReference@15a833c6
+13:32:11.505 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration object -> org.hibernate.type.JavaObjectType@25e08c3b
+13:32:11.505 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration java.lang.Object -> org.hibernate.type.JavaObjectType@25e08c3b
+13:32:11.507 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration null -> org.hibernate.type.NullType@2b81e13c
+13:32:11.507 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration imm_date -> org.hibernate.type.BasicTypeReference@5287c159
+13:32:11.507 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration imm_time -> org.hibernate.type.BasicTypeReference@70961c7b
+13:32:11.507 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration imm_timestamp -> org.hibernate.type.BasicTypeReference@2754e467
+13:32:11.507 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration imm_calendar -> org.hibernate.type.BasicTypeReference@3f869b0
+13:32:11.508 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration imm_calendar_date -> org.hibernate.type.BasicTypeReference@6f99ed9f
+13:32:11.508 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration imm_calendar_time -> org.hibernate.type.BasicTypeReference@2f2c41d3
+13:32:11.508 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration imm_binary -> org.hibernate.type.BasicTypeReference@2fdbef8d
+13:32:11.508 [main] DEBUG org.hibernate.type.BasicTypeRegistry -- Adding type registration imm_serializable -> org.hibernate.type.BasicTypeReference@6faea62f
+13:32:11.513 [main] DEBUG org.hibernate.boot.internal.BootstrapContextImpl -- Injecting ScanEnvironment [org.hibernate.jpa.boot.internal.StandardJpaScanEnvironmentImpl@3e06d3a6] into BootstrapContext; was [null]
+13:32:11.514 [main] DEBUG org.hibernate.boot.internal.BootstrapContextImpl -- Injecting ScanOptions [org.hibernate.boot.archive.scan.internal.StandardScanOptions@18a71e25] into BootstrapContext; was [org.hibernate.boot.archive.scan.internal.StandardScanOptions@47c0c992]
+13:32:11.564 [main] DEBUG org.hibernate.boot.internal.BootstrapContextImpl -- Injecting JPA temp ClassLoader [null] into BootstrapContext; was [null]
+13:32:11.564 [main] DEBUG org.hibernate.boot.internal.ClassLoaderAccessImpl -- ClassLoaderAccessImpl#injectTempClassLoader(null) [was null]
+13:32:11.589 [main] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
+13:32:11.597 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+13:32:11.598 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/blogdb?createDatabaseIfNotExist=true]
+13:32:11.598 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001001: Connection properties: {password=YOUR_PASSWORD, user=YOUR_USERNAME}
+13:32:11.598 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001003: Autocommit mode: false
+13:32:11.604 [main] DEBUG org.hibernate.orm.connections.pooling -- Initializing Connection pool with 1 Connections
+13:32:11.604 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001115: Connection pool size: 20 (min=1)
+13:32:12.162 [main] WARN org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator -- HHH000342: Could not obtain connection to query metadata
+java.lang.IllegalStateException: Cannot get a connection as the driver manager is not properly initialized
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:259)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:428)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:129)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:52)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:135)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.convertSqlException(BasicConnectionCreator.java:132)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:43)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:61)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:499)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:372)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:550)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:102)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:82)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:135)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:395)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:262)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:129)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:55)
+	at jakarta.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at jakarta.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at com.example.blog.util.JPAUtil.getEntityManagerFactory(JPAUtil.java:13)
+	at com.example.blog.listener.AppContextListener.contextInitialized(AppContextListener.java:14)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4422)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4860)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:712)
+	at org.apache.catalina.Container$addChild$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at org.akhikhl.gretty.TomcatServerManager.startServer(TomcatServerManager.groovy:81)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:209)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:51)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:130)
+	at org.akhikhl.gretty.Runner.run(Runner.groovy:63)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:189)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.call(PogoMetaMethodSite.java:69)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:130)
+	at org.akhikhl.gretty.Runner.main(Runner.groovy:35)
+13:32:12.208 [main] WARN org.hibernate.orm.deprecation -- HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+13:32:12.210 [main] DEBUG org.hibernate.orm.dialect -- HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.0
+13:32:12.224 [main] DEBUG org.hibernate.engine.jdbc.env.spi.IdentifierHelperBuilder -- IdentifierCaseStrategy for both quoted and unquoted identifiers was set to the same strategy [MIXED]; that will likely lead to problems in schema update and validation if using quoted identifiers
+13:32:12.231 [main] DEBUG org.hibernate.orm.jdbc.lob -- HHH10010002: Disabling contextual LOB creation as connection was null
+13:32:12.234 [main] DEBUG org.hibernate.engine.jdbc.spi.SqlExceptionHelper -- Error calling Driver#connect [null]
+java.sql.SQLException: Access denied for user 'YOUR_USERNAME'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:438)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:189)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:40)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:61)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:499)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:372)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:550)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:102)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:82)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:135)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:395)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:262)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:129)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:55)
+	at jakarta.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at jakarta.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at com.example.blog.util.JPAUtil.getEntityManagerFactory(JPAUtil.java:13)
+	at com.example.blog.listener.AppContextListener.contextInitialized(AppContextListener.java:14)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4422)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4860)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:712)
+	at org.apache.catalina.Container$addChild$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at org.akhikhl.gretty.TomcatServerManager.startServer(TomcatServerManager.groovy:81)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:209)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:51)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:130)
+	at org.akhikhl.gretty.Runner.run(Runner.groovy:63)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:189)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.call(PogoMetaMethodSite.java:69)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:130)
+	at org.akhikhl.gretty.Runner.main(Runner.groovy:35)
+13:32:12.236 [main] WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper -- SQL Error: 1045, SQLState: 28000
+13:32:12.236 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper -- Access denied for user 'YOUR_USERNAME'@'localhost' (using password: YES)
+13:32:12.238 [main] DEBUG org.hibernate.service.spi.ServiceBinding -- Overriding existing service binding [org.hibernate.engine.jdbc.connections.spi.ConnectionProvider]
+
+> Task :appRun
+Press any key to stop the server.
