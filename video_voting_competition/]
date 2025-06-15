@@ -1,0 +1,30 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const videosContainer = document.getElementById("top-five-container");
+
+  function render(videos) {
+    const titleH2 = document.createElement("h2");
+    titleH2.textContent = "Top 5 videos";
+
+    const tableContainer = document.createElement("div");
+    tableContainer.className = "table-container";
+
+    const rowHeader = document.createElement("div");
+    rowHeader.className = "row header";
+
+    videosContainer.appendChild(titleH2);
+    videosContainer.appendChild(tableContainer);
+  }
+
+  function funcVideosInfo() {
+    let page = 1;
+    let quantity = 5;
+
+    async function render() {
+      try {
+        const videos = await fetchVideos(page, quantity);
+      } catch (err) {
+        showError(err.message);
+      }
+    }
+  }
+});

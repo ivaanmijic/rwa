@@ -9,6 +9,7 @@ import com.example.video_voting.util.JPAUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
+import jakarta.servlet.jsp.tagext.TryCatchFinally;
 
 /**
  * VideoRepository
@@ -45,6 +46,21 @@ public class VideoRepository {
           Video.class);
       List<Video> randomVideos = query.setMaxResults(2).getResultList();
       return randomVideos;
+    } finally {
+      em.close();
+    }
+  }
+
+  public List<Video> SelectByRankFromOffsetWithLimit(Integer offset, Integer limit) {
+    EntityManager em = JPAUtil.getEntityManager();
+    try {
+      TypedQuery<Video> query = em.createQuery(
+          "SELECT v FROM Video v " +
+              "ORDER BY v.votes DESC",
+          Video.class);
+      query.setFirstResult(offset);
+      query.setMaxResults(limit);
+      return query.getResultList();
     } finally {
       em.close();
     }

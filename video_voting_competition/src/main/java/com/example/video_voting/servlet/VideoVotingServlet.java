@@ -73,7 +73,7 @@ public class VideoVotingServlet extends HttpServlet {
       return Long.parseLong(idValue);
     } catch (NumberFormatException e) {
       System.err.println("Error parsing 'videoId': " + idValue + " - " + e.getMessage());
-      throw new HttpException(HttpServletResponse.SC_BAD_REQUEST, "Invalid vidoe ID format");
+      throw new HttpException(HttpServletResponse.SC_BAD_REQUEST, "Invalid video ID format");
     }
 
   }

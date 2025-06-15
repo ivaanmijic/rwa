@@ -35,6 +35,21 @@ public class VideoService {
     repository.updateVotes(otherVideo);
   }
 
+  public List<Video> getVideosFromPage(Integer page) {
+    Integer offset;
+    Integer limit;
+
+    if (page == 1) {
+      offset = 0;
+      limit = 5;
+    } else {
+      offset = 5 + (page - 2) * 10;
+      limit = 10;
+    }
+
+    return repository.SelectByRankFromOffsetWithLimit(offset, limit);
+  }
+
   public void saveVideo(Video video) {
     repository.insert(video);
   }
