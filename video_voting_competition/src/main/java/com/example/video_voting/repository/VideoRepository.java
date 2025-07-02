@@ -9,12 +9,24 @@ import com.example.video_voting.util.JPAUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
+import jakarta.persistence.criteria.CriteriaBuilder.In;
 import jakarta.servlet.jsp.tagext.TryCatchFinally;
 
 /**
  * VideoRepository
  */
 public class VideoRepository {
+
+  public Long count() {
+    EntityManager em = JPAUtil.getEntityManager();
+    try {
+      TypedQuery<Long> query = em.createQuery(
+          "SELECT COUNT(v) FROM Video v", Long.class);
+      return query.getSingleResult();
+    } finally {
+      em.close();
+    }
+  }
 
   public List<Video> selectAll() {
     EntityManager em = JPAUtil.getEntityManager();

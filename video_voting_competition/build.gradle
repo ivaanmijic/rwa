@@ -20,6 +20,7 @@ repositories {
 dependencies {
     // Serialization - Gson
     implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'net.datafaker:datafaker:2.0.2'
 
     // Jakarta EE 10 API
     compileOnly 'jakarta.platform:jakarta.jakartaee-api:10.0.0'

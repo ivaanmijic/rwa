@@ -15,15 +15,8 @@ public class Video {
   @Column(nullable = false, length = 255)
   private String name;
 
-  @Column(nullable = false, length = 512)
-  private String url;
-
-  @Column(name = "thumbnail_url", length = 512)
-  private String thumbnailURL;
-
-  @Lob
-  @Column(columnDefinition = "TEXT")
-  private String description;
+  @Column(name = "youtube_id", nullable = false, length = 11)
+  private String youtubeId;
 
   @Column(nullable = false)
   private Integer votes = 0;
@@ -34,15 +27,9 @@ public class Video {
   public Video() {
   }
 
-  public Video(
-      String name,
-      String url,
-      String thumbnailURL,
-      String description) {
+  public Video(String name, String youtubeId) {
     this.name = name;
-    this.url = url;
-    this.thumbnailURL = thumbnailURL;
-    this.description = description;
+    this.youtubeId = youtubeId;
   }
 
   public Long getId() {
@@ -53,32 +40,8 @@ public class Video {
     return name;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public String getURL() {
-    return url;
-  }
-
-  public void setURL(String url) {
-    this.url = url;
-  }
-
-  public String getThumbnailURL() {
-    return thumbnailURL;
-  }
-
-  public void setThumbnailURL(String thumbnailURL) {
-    this.thumbnailURL = thumbnailURL;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
+  public String getYoutubeId() {
+    return youtubeId;
   }
 
   public Integer getVotes() {

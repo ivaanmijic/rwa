@@ -1,5 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("rand-videos-container");
+  const refreshButton = document.getElementById("refresh-btn");
+
+  if (refreshButton) {
+    refreshButton.addEventListener("click", () => {
+      loadAndRenderVideos();
+    });
+  }
 
   function loadAndRenderVideos() {
     fetch(`${window.ctxPath}/random-videos`)
@@ -35,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     card.appendChild(h3);
 
     const iframe = document.createElement("iframe");
-    iframe.src = `${video.url}?autoplay=0`;
+    iframe.src = `https://www.youtube.com/embed/${video.youtubeId}?autoplay=0`;
     iframe.title = video.name;
     iframe.setAttribute("frameborder", "0");
     iframe.setAttribute(

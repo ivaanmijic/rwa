@@ -39,7 +39,7 @@ public class RankingTableServlet extends HttpServlet {
     resp.setCharacterEncoding("UTF-8");
 
     try {
-      List<Video> videos = videoService.getVideosFromPage(pageNumber);
+      List<Video> videos = videoService.getByRanking(0, 5);
       String json = gson.toJson(videos);
       resp.getWriter().write(json);
     } catch (HttpException e) {

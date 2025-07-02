@@ -35,18 +35,7 @@ public class VideoService {
     repository.updateVotes(otherVideo);
   }
 
-  public List<Video> getVideosFromPage(Integer page) {
-    Integer offset;
-    Integer limit;
-
-    if (page == 1) {
-      offset = 0;
-      limit = 5;
-    } else {
-      offset = 5 + (page - 2) * 10;
-      limit = 10;
-    }
-
+  public List<Video> getByRanking(Integer offset, Integer limit) {
     return repository.SelectByRankFromOffsetWithLimit(offset, limit);
   }
 
@@ -57,6 +46,10 @@ public class VideoService {
   public void castVote(Video video, Vote vote) {
     video.castVote(vote);
     repository.updateVotes(video);
+  }
+
+  public Integer getCount() {
+    return repository.count().intValue();
   }
 
   private Video findVideoOrThrow(Long id) throws HttpException {
