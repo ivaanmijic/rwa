@@ -2,15 +2,15 @@ package com.example.video_voting.repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
 
+import com.example.video_voting.logging.AppLogger;
 import com.example.video_voting.model.Video;
 import com.example.video_voting.util.JPAUtil;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
-import jakarta.persistence.criteria.CriteriaBuilder.In;
-import jakarta.servlet.jsp.tagext.TryCatchFinally;
 
 /**
  * VideoRepository
@@ -23,18 +23,6 @@ public class VideoRepository {
       TypedQuery<Long> query = em.createQuery(
           "SELECT COUNT(v) FROM Video v", Long.class);
       return query.getSingleResult();
-    } finally {
-      em.close();
-    }
-  }
-
-  public List<Video> selectAll() {
-    EntityManager em = JPAUtil.getEntityManager();
-    try {
-      TypedQuery<Video> query = em.createQuery(
-          "SELECT v FROM Video v ORDER BY v.votes DESC",
-          Video.class);
-      return query.getResultList();
     } finally {
       em.close();
     }
@@ -63,16 +51,32 @@ public class VideoRepository {
     }
   }
 
-  public List<Video> SelectByRankFromOffsetWithLimit(Integer offset, Integer limit) {
+  public List<Video> selectByRankFromOffsetWithLimit(Integer pageNumber, Integer pageSize) {
     EntityManager em = JPAUtil.getEntityManager();
+
+    Integer firstResult = (pageNumber - 1) * pageSize;
+
     try {
-      TypedQuery<Video> query = em.createQuery(
-          "SELECT v FROM Video v " +
-              "ORDER BY v.votes DESC",
-          Video.class);
-      query.setFirstResult(offset);
-      query.setMaxResults(limit);
-      return query.getResultList();
+      String queryString = "SELECT v " +
+          "FROM Video v " +
+          "ORDER BY " +
+          "  CASE WHEN v.totalVotes = 0 THEN 1 ELSE 0 END, " +
+          "  ( " +
+          "    ((v.votes + 1.9208) / v.totalVotes) " +
+          "    - 1.96 * SQRT( (v.votes * (v.totalVotes - v.votes)) / v.totalVotes + 0.9604 ) / v.totalVotes" +
+          "  ) / (1 + 3.8416 / v.totalVotes) DESC";
+
+      TypedQuery<Video> q = em.createQuery(queryString, Video.class);
+      q.setFirstResult(firstResult);
+      q.setMaxResults(pageSize);
+
+      List<Video> videos = q.getResultList();
+
+      for (Video video : videos) {
+        AppLogger.getLogger().log(Level.INFO, video.getName());
+      }
+
+      return videos;
     } finally {
       em.close();
     }

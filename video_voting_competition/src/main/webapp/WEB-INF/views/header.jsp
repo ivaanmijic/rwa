@@ -3,7 +3,7 @@
     <h1>Video Voting Competition</h1>
 <div class="right-controls">
   
-<a href="${pageContext.request.contextPath}/ranking?page=1" class="ranking-btn">Ranking</a>
+<a href="${pageContext.request.contextPath}/ranking?page=1" class="ranking-btn">Rankings</a>
 
   <span class="header-icon">
     <button id="refresh-btn" class="icon-button" type="button">

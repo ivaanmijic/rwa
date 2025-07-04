@@ -14,30 +14,31 @@
     <div class="main">
       <header>
         <h1>Rankings</h1>
-        <button onclick="location='${pageContext.request.contextPath}/index.jsp'">Back</button>
+        <div class="right-controls">
+        <button class="ranking-btn" onclick="location='${pageContext.request.contextPath}/index.jsp'">Back</button>
+        </div>
       </header>
 
       <div id="ranking-container">
-        <!-- JS will inject table here -->
       </div>
 
       <footer>
         <div class="pagination">
           <c:if test="${hasPrevBlock}">
-            <button onclick="goToPage(${startPage-1})">&lt;&lt;</button>
+            <button class="ranking-btn" onclick="goToPage(${startPage-1})">&lt;&lt;</button>
           </c:if>
 
           <c:forEach begin="${startPage}" end="${endPage}" var="i">
-            <button class="${i == currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>
+            <button class = "ranking-btn" class="${i == currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>
           </c:forEach>
 
           <c:if test="${hasNextBlock}">
-            <button onclick="goToPage(${endPage+1})">&gt;&gt;</button>
+            <button  class = "ranking-btn" onclick="goToPage(${endPage+1})">&gt;&gt;</button>
           </c:if>
         </div>
       </footer>
     </div>
 
-    <script src="${pageContext.request.contextPath}/js/ranking-page.js"></script>
+    <script src="${pageContext.request.contextPath}/js/RankingPageLoader.js"></script>
   </body>
 </html>

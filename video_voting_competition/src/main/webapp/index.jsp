@@ -28,9 +28,10 @@
 
     <jsp:include page="/WEB-INF/views/footer.jsp"/>
 </div>
-<script src="${pageContext.request.contextPath}/js/global-utils.js"></script>
-<script src="${pageContext.request.contextPath}/js/random-videos-loader.js"></script>
-<script src="${pageContext.request.contextPath}/js/mini-ranking-table.js"></script>
-<script src="${pageContext.request.contextPath}/js/share-links.js"></script>
+<script src="${pageContext.request.contextPath}/js/GlobalUtils.js"></script>
+<script src="${pageContext.request.contextPath}/js/TopFiveVideosLoader.js"></script>
+<script src="${pageContext.request.contextPath}/js/RandomVideosLoader.js"></script>
+<script src="${pageContext.request.contextPath}/js/LinksManager.js"></script>
+<script src="${pageContext.request.contextPath}/js/RankingTableLoader.js"></script>
 </body>
 </html>

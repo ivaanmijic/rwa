@@ -6,6 +6,7 @@ import java.util.List;
 import com.example.video_voting.model.Video;
 import com.example.video_voting.model.supporting.HttpException;
 import com.example.video_voting.service.VideoService;
+import com.example.video_voting.supporting.IntegerParser;
 import com.google.gson.Gson;
 
 import jakarta.servlet.ServletException;
@@ -21,6 +22,9 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "RankingTableServlet", urlPatterns = "/ranking-table")
 public class RankingTableServlet extends HttpServlet {
 
+  private static final int DEFAULT_PAGE_NUMBER = 1;
+  private static final int DEFAULT_PAGE_SIZE = 20;
+
   private VideoService videoService;
   private Gson gson;
 
@@ -33,15 +37,29 @@ public class RankingTableServlet extends HttpServlet {
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    Integer pageNumber = parseInteger("page", req.getParameter("page"));
+
+    Integer pageNumber = DEFAULT_PAGE_NUMBER;
+    Integer pageSize = DEFAULT_PAGE_SIZE;
+
+    String pageParam = req.getParameter("page");
+    String limitParam = req.getParameter("limit");
+
+    try {
+      pageNumber = IntegerParser.parse("page", pageParam);
+      pageSize = IntegerParser.parse("limit", limitParam);
+    } catch (HttpException e) {
+      resp.sendError(e.getStatusCode(), e.getMessage());
+      return;
+    }
 
     resp.setContentType("application/json");
     resp.setCharacterEncoding("UTF-8");
 
     try {
-      List<Video> videos = videoService.getByRanking(0, 5);
+      List<Video> videos = videoService.getByRanking(pageNumber, pageSize);
       String json = gson.toJson(videos);
       resp.getWriter().write(json);
+
     } catch (HttpException e) {
       resp.sendError(e.getStatusCode(), e.getMessage());
     } catch (Exception e) {
@@ -49,20 +67,6 @@ public class RankingTableServlet extends HttpServlet {
           "Failed to load videos: " + e.getMessage());
     }
 
-  }
-
-  private Integer parseInteger(String key, String value) throws HttpException {
-    if (value.isEmpty() || value.trim().isEmpty()) {
-      System.err.println("ERROR: '" + key + "' paramter is missing");
-      throw new HttpException(HttpServletResponse.SC_BAD_REQUEST, key + " paramter is missing.");
-    }
-
-    try {
-      return Integer.parseInt(value);
-    } catch (NumberFormatException e) {
-      System.err.println("ERROR: Failet to parse '" + key + "' value " + value + " " + e.getMessage());
-      throw new HttpException(HttpServletResponse.SC_BAD_REQUEST, key + " parameter format is missing.");
-    }
   }
 
 }

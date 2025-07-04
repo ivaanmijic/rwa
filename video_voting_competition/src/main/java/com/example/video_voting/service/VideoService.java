@@ -35,8 +35,9 @@ public class VideoService {
     repository.updateVotes(otherVideo);
   }
 
-  public List<Video> getByRanking(Integer offset, Integer limit) {
-    return repository.SelectByRankFromOffsetWithLimit(offset, limit);
+  public List<Video> getByRanking(Integer page, Integer pageSize) {
+    List<Video> videos = repository.selectByRankFromOffsetWithLimit(page, pageSize);
+    return videos;
   }
 
   public void saveVideo(Video video) {
@@ -51,6 +52,8 @@ public class VideoService {
   public Integer getCount() {
     return repository.count().intValue();
   }
+
+  // MARK: - Private Helpers
 
   private Video findVideoOrThrow(Long id) throws HttpException {
     return repository.selectById(id)
