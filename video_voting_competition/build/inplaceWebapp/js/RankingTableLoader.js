@@ -39,7 +39,7 @@ function render(videos, element) {
             (video, idx) => `
     <div class="row">
       <div class="cell image">
-        <img src="https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg" alt="${video.name}">
+        <img src="${video.thumbnailURL}" alt="${video.name}">
       </div>
       <div class="cell headline">${video.name}</div>
       <div class="cell votes">${video.votes}/${video.totalVotes}</div>

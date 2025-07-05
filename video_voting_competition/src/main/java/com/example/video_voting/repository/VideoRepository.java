@@ -2,9 +2,7 @@ package com.example.video_voting.repository;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Level;
 
-import com.example.video_voting.logging.AppLogger;
 import com.example.video_voting.model.Video;
 import com.example.video_voting.util.JPAUtil;
 
@@ -70,13 +68,7 @@ public class VideoRepository {
       q.setFirstResult(firstResult);
       q.setMaxResults(pageSize);
 
-      List<Video> videos = q.getResultList();
-
-      for (Video video : videos) {
-        AppLogger.getLogger().log(Level.INFO, video.getName());
-      }
-
-      return videos;
+      return q.getResultList();
     } finally {
       em.close();
     }

@@ -22,6 +22,24 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'net.datafaker:datafaker:2.0.2'
 
+     // Google API Client for Java (Parent project for other Google API client libraries)
+    implementation 'com.google.api-client:google-api-client:1.47.1' // Latest as of current date
+
+    // YouTube Data API service library
+    // Check https://mvnrepository.com/artifact/com.google.apis/google-api-services-youtube for the absolute latest revision
+    implementation 'com.google.apis:google-api-services-youtube:v3-rev20250422-2.0.0' // Use the most recent 'v3-revYYYYMMDD-X.Y.Z'
+
+    // HTTP transport for Google APIs (Using the newer Apache HTTP Client v2 wrapper)
+    // Ensure this version aligns with google-api-client if possible.
+    // There's also -apache-v5 if you're using Apache HttpClient 5.x
+    implementation 'com.google.http-client:google-http-client-apache-v2:1.47.1'
+
+    // JSON data processing (Jackson2 is commonly used and pulled by google-api-client, but explicitly adding for clarity)
+    implementation 'com.google.http-client:google-http-client-jackson2:1.47.1'
+
+    // For OAuth 2.0 (if you need user authorization) - often good to keep in sync with google-api-client
+    implementation 'com.google.oauth-client:google-oauth-client-jetty:1.32.1' // This specific module might not always align perfectly
+                                                                          // with the main client library, but 1.32.1 is common.
     // Jakarta EE 10 API
     compileOnly 'jakarta.platform:jakarta.jakartaee-api:10.0.0'
     

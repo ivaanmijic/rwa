@@ -15,8 +15,11 @@ public class Video {
   @Column(nullable = false, length = 255)
   private String name;
 
-  @Column(name = "youtube_id", nullable = false, length = 11)
+  @Column(name = "youtube_id", nullable = false, length = 11, unique = true)
   private String youtubeId;
+
+  @Column(name = "thumbnail_url", nullable = false, length = 500)
+  private String thumbnailURL;
 
   @Column(nullable = false)
   private Integer votes = 0;
@@ -27,9 +30,10 @@ public class Video {
   public Video() {
   }
 
-  public Video(String name, String youtubeId) {
+  public Video(String name, String youtubeId, String thumbnailURL) {
     this.name = name;
     this.youtubeId = youtubeId;
+    this.thumbnailURL = thumbnailURL;
   }
 
   public Long getId() {
@@ -42,6 +46,10 @@ public class Video {
 
   public String getYoutubeId() {
     return youtubeId;
+  }
+
+  public String getThumbnailURL() {
+    return thumbnailURL;
   }
 
   public Integer getVotes() {

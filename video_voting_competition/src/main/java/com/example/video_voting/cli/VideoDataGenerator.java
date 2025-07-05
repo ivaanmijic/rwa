@@ -45,19 +45,25 @@ public class VideoDataGenerator {
     VideoService videoService = new VideoService();
 
     for (int i = 0; i < 10; i++) {
-      Video video = new Video(TITLES.get(i), IDS.get(i));
+      var id = IDS.get(i);
+      final String thumbnailURL = getThumbnailURL(id);
+      Video video = new Video(TITLES.get(i), id, thumbnailURL);
       videoService.saveVideo(video);
     }
 
-    Faker faker = new Faker();
-    Random random = new Random();
-    for (int i = 0; i < 100; i++) {
-      String id = IDS.get(random.nextInt(IDS.size()));
-      String title = faker.book().title();
-      Video video = new Video(title, id);
-      videoService.saveVideo(video);
-    }
+    // Faker faker = new Faker();
+    // Random random = new Random();
+    // for (int i = 0; i < 100000; i++) {
+    // String id = IDS.get(random.nextInt(IDS.size()));
+    // String title = faker.book().title();
+    // Video video = new Video(title, id);
+    // videoService.saveVideo(video);
+    // }
 
+  }
+
+  private static String getThumbnailURL(String videoId) {
+    return String.format("https://img.youtube.com/vi/%s/hqdefault.jpg", videoId);
   }
 
 }
