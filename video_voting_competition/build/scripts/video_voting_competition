@@ -212,7 +212,7 @@ DEFAULT_JVM_OPTS=""
 
 set -- \
         -classpath "$CLASSPATH" \
-        com.example.video_voting.cli.VideoDataGenerator \
+        com.example.video_voting.cli.AdminDataGenerator \
         "$@"
 
 # Stop when "xargs" is not available.

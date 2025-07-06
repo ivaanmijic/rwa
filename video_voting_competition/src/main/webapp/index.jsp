@@ -28,6 +28,7 @@
 
     <jsp:include page="/WEB-INF/views/footer.jsp"/>
 </div>
+<script src="${pageContext.request.contextPath}/js/AuthStatus.js"></script>
 <script src="${pageContext.request.contextPath}/js/GlobalUtils.js"></script>
 <script src="${pageContext.request.contextPath}/js/TopFiveVideosLoader.js"></script>
 <script src="${pageContext.request.contextPath}/js/RandomVideosLoader.js"></script>

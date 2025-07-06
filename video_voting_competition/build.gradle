@@ -72,7 +72,7 @@ test {
 
 gretty {
     servletContainer = 'tomcat10'
-    contextPath = '/voting'
+    contextPath = '/'
     httpPort = 8080
 }
 
@@ -82,14 +82,13 @@ war {
 
 // CLI application configuration
 application {
-    mainClass = 'com.example.video_voting.cli.VideoDataGenerator'
+    mainClass = 'com.example.video_voting.cli.AdminDataGenerator'
 }
 
-tasks.register('generateVideosData', JavaExec) {
+tasks.register('generateAdminData', JavaExec) {
     group = 'data'
-    description = 'Populate the database with the sample videos list.'
+    description = 'Populate the database with the sample admin.'
 
     classpath = sourceSets.main.runtimeClasspath
     mainClass.set(application.mainClass)
 }
-

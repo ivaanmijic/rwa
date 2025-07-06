@@ -74,7 +74,7 @@ set CLASSPATH=%APP_HOME%\lib\video_voting_competition-1.0-SNAPSHOT.jar;%APP_HOME
 
 
 @rem Execute video_voting_competition
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %VIDEO_VOTING_COMPETITION_OPTS%  -classpath "%CLASSPATH%" com.example.video_voting.cli.VideoDataGenerator %*
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %VIDEO_VOTING_COMPETITION_OPTS%  -classpath "%CLASSPATH%" com.example.video_voting.cli.AdminDataGenerator %*
 
 :end
 @rem End local scope for the variables with windows NT shell

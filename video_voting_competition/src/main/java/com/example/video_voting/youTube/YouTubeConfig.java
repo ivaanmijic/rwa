@@ -22,7 +22,7 @@ public final class YouTubeConfig {
   private static final String API_KEY = System.getenv("YOUTUBE_KEY");
   private static final String APP_NAME = "Video Voting Competition";
   private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
-  private static YouTube youtube;
+  private static volatile YouTube youtube;
 
   private YouTubeConfig() {
     if (API_KEY == null) {
