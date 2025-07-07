@@ -1,10 +1,13 @@
 package com.example.video_voting.service;
 
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.List;
 
 import com.example.video_voting.model.User;
 import com.example.video_voting.repository.UserRepository;
 import com.example.video_voting.util.PasswordUtil;
+import com.example.video_voting.model.supporting.*;
 
 /**
  * UserService
@@ -15,6 +18,12 @@ public class UserService {
 
   public UserService() {
     this.userRepo = new UserRepository();
+  }
+
+  public List<User> getNonAdminUsers() {
+    return userRepo.fetchAll().stream()
+        .filter(user -> !user.getRoles().contains(Role.ADMIN))
+        .collect(Collectors.toList());
   }
 
   public User createUser(User user) {
