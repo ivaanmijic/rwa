@@ -56,7 +56,7 @@ public class UserRepository {
 
     try {
       TypedQuery<User> query = em.createQuery(
-          "SELECT u FROM User WHERE u.username = :username",
+          "SELECT u FROM User u WHERE u.username = :username",
           User.class);
       query.setParameter("username", username);
       return Optional.ofNullable(query.getSingleResult());

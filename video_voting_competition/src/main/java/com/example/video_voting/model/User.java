@@ -1,8 +1,12 @@
+
 package com.example.video_voting.model;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.example.video_voting.model.supporting.Role;
+import com.google.gson.annotations.Expose;
 
 import jakarta.persistence.*;
 
@@ -13,28 +17,34 @@ import jakarta.persistence.*;
 @Table(name = "users")
 public class User {
 
+  @Expose
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
+  @Expose
   @Column(nullable = false)
   private String firstname;
 
+  @Expose
   @Column(nullable = false)
   private String lastname;
 
+  @Expose
   @Column(nullable = false, unique = true)
   private String username;
 
+  @Expose
   @Column(nullable = false)
   private String email;
 
   @Column(nullable = false)
   private String password;
 
+  @Expose
   @Enumerated(EnumType.STRING)
-  @Column(nullable = false)
-  private Role role;
+  @Column(name = "role")
+  private Set<Role> roles = new HashSet<>();
 
   @Column(name = "created_at", nullable = false)
   private LocalDateTime createdAt;
@@ -52,14 +62,18 @@ public class User {
     this.updatedAt = LocalDateTime.now();
   }
 
-  // Initialization
-  public User(String firstname, String lastname, String username, String email, String password, Role role) {
+  // Constructors
+
+  public User() {
+  }
+
+  public User(String firstname, String lastname, String username, String email, String password, Set<Role> roles) {
     this.firstname = firstname;
     this.lastname = lastname;
     this.username = username;
     this.email = email;
     this.password = password;
-    this.role = role;
+    this.roles = roles;
   }
 
   // Getters and Setters
@@ -112,12 +126,12 @@ public class User {
     this.password = password;
   }
 
-  public Role getRole() {
-    return role;
+  public Set<Role> getRoles() {
+    return roles;
   }
 
-  public void setRole(Role role) {
-    this.role = role;
+  public void setRoles(Set<Role> roles) {
+    this.roles = roles;
   }
 
   public LocalDateTime getCreatedAt() {
