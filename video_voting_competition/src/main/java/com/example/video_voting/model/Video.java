@@ -27,13 +27,17 @@ public class Video {
   @Column(name = "total_votes", nullable = false)
   private Integer totalVotes = 0;
 
+  @Column(name = "custom_image_url")
+  private String CustomImageUrl;
+
   public Video() {
   }
 
-  public Video(String name, String youtubeId, String thumbnailURL) {
+  public Video(String name, String youtubeId, String thumbnailURL, String CustomImageUrl) {
     this.name = name;
     this.youtubeId = youtubeId;
     this.thumbnailURL = thumbnailURL;
+    this.CustomImageUrl = CustomImageUrl;
   }
 
   public Long getId() {

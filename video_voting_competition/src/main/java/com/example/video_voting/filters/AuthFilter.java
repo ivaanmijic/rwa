@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpSession;
  * AuthFilter
  */
 @WebFilter(urlPatterns = {
-    "/create-video",
+    "/upload",
     "/admin/*"
 })
 public class AuthFilter implements Filter {

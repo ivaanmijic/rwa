@@ -1,7 +1,20 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <header>
 
-<h1>Video Voting Competition</h1>
+  <c:set var="isAdmin" value="false" />
+  <c:forEach var="r" items="${sessionScope.role}">
+    <c:if test="${r == 'ADMIN'}">
+       <c:set var="isAdmin" value="true" />
+    </c:if>
+  </c:forEach>
+
+  <div class="left-container">
+    <h1>Video Voting Competition</h1>
+    <c:if test="${isAdmin}">
+    <button type="submit" onclick="window.location.href='${pageContext.request.contextPath}/upload'" class="btn btn-primary">Upload</button>
+    </c:if>
+  </div>
+
 
 
 <div class="right-controls">

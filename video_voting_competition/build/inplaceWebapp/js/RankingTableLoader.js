@@ -26,6 +26,10 @@ async function fetchVideos(page, limit) {
 }
 
 function render(videos, element) {
+  videos.map((video, idx) => {
+    console.log(video);
+  });
+
   element.innerHTML += `
       <div class="table-container">
         <div class="row header">
@@ -39,7 +43,7 @@ function render(videos, element) {
             (video, idx) => `
     <div class="row">
       <div class="cell image">
-        <img src="${video.thumbnailURL}" alt="${video.name}">
+        <img src="${video.CustomImageUrl != null && video.CustomImageUrl.trim() !== "" ? video.CustomImageUrl : video.thumbnailURL}" alt="${video.name}">
       </div>
       <div class="cell headline">${video.name}</div>
       <div class="cell votes">${video.votes}/${video.totalVotes}</div>

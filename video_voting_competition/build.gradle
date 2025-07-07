@@ -21,6 +21,9 @@ dependencies {
     // Serialization - Gson
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'net.datafaker:datafaker:2.0.2'
+    implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
+    // Also needed: an actual implementation (e.g. Hibernate Validator)
+    implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
 
      // Google API Client for Java (Parent project for other Google API client libraries)
     implementation 'com.google.api-client:google-api-client:1.47.1' // Latest as of current date

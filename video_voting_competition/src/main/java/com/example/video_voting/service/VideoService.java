@@ -1,8 +1,6 @@
 package com.example.video_voting.service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
 
 import com.example.video_voting.model.Video;
 import com.example.video_voting.model.supporting.HttpException;

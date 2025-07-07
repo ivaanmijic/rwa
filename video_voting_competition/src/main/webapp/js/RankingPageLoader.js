@@ -31,7 +31,7 @@
         (v, idx) => `
       <div class="row">
         <div class="cell image">
-          <img src="${v.thumbnailURL}" alt="${v.name}"/>
+          <img src="${v.CustomImageUrl != null && v.CustomImageUrl.trim() !== "" ? v.CustomImageUrl : v.thumbnailURL}" alt="${v.name}"/>
         </div>
         <div class="cell headline">${v.name}</div>
         <div class="cell votes">${v.votes}/${v.totalVotes}</div>
