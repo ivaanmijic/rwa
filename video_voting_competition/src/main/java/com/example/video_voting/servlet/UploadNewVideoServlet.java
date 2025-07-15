@@ -56,7 +56,7 @@ public class UploadNewVideoServlet extends HttpServlet {
       return;
     }
 
-    if (customImage != null) {
+    if (customImage != null && !customImage.trim().isEmpty()) {
       if (!isValidImageUrl(customImage)) {
         req.setAttribute("error", "Invalid URL for Custom Image");
         req.getRequestDispatcher("/WEB-INF/views/upload.jsp").forward(req, resp);
